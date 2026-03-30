@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me</title>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#020617,#0f172a);
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+}
+
+nav a{
+  color:#94a3b8;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#a855f7;
+}
+
+/* MAIN CONTAINER */
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 20px;
+}
+
+/* CARD */
+.card{
+  max-width:900px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 0 40px rgba(168,85,247,0.3);
+  animation:fadeIn 1s ease;
+}
+
+/* TITLE */
+.title{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.title span{
+  background:linear-gradient(45deg,#6366f1,#a855f7);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* TEXT */
+.text{
+  color:#cbd5f5;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+/* PROFILE IMAGE */
+.profile{
+  display:flex;
+  justify-content:center;
+  margin:30px 0;
+}
+
+.profile img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #a855f7;
+  box-shadow:0 0 20px #a855f7;
+}
+
+/* SKILLS */
+.skills{
+  margin-top:20px;
+}
+
+.skill-title{
+  margin-bottom:10px;
+}
+
+.skill-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  padding:6px 12px;
+  background:#1e293b;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  color:white;
+  font-size:14px;
+}
+
+.primary{
+  background:linear-gradient(45deg,#6366f1,#a855f7);
+}
+
+.secondary{
+  border:1px solid #6366f1;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .card{padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>SENTHAMIL SELVAN</h2>
+
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1 class="title">About <span>Me</span></h1>
+
+<p class="text">
+Hi, I’m <b>SENTHAMIL SELVAN</b>, a passionate AI, Machine Learning, and Data Science enthusiast.
+I love building intelligent systems, solving real-world problems, and creating innovative tech solutions.
+</p>
+
+<div class="profile">
+<img src="assets/profile.jpg">
+</div>
+
+<!-- SKILLS -->
+<div class="skills">
+<h3 class="skill-title">Skills & Expertise</h3>
+
+<div class="skill-list">
+<span class="skill">Python</span>
+<span class="skill">Machine Learning</span>
+<span class="skill">Deep Learning</span>
+<span class="skill">Data Science</span>
+<span class="skill">Computer Vision</span>
+<span class="skill">NLP</span>
+<span class="skill">TensorFlow</span>
+<span class="skill">Flask</span>
+<span class="skill">HTML/CSS</span>
+</div>
+</div>
+
+<!-- EDUCATION -->
+<div class="skills">
+<h3 class="skill-title">Education</h3>
+<p class="text">
+B.E Computer Science Engineering<br>
+Final Year Student
+</p>
+</div>
+
+<!-- GOAL -->
+<div class="skills">
+<h3 class="skill-title">What I'm Looking For</h3>
+<p class="text">
+I am actively seeking internships and opportunities to apply my AI/ML knowledge and grow professionally.
+</p>
+</div>
+
+<!-- BUTTONS -->
+<div class="buttons">
+<a href="contact.html" class="btn primary">Get in Touch</a>
+<a href="resume.pdf" class="btn secondary" target="_blank">Download Resume</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

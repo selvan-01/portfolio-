@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at top,#020617,#020617,#0f172a);
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
+
+nav h2{
+  font-size:22px;
+}
+
+nav a{
+  color:#94a3b8;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#a855f7;
+}
+
+/* TITLE */
+.title{
+  text-align:center;
+  margin-top:60px;
+  font-size:42px;
+  background:linear-gradient(45deg,#6366f1,#a855f7);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* GRID */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1300px;
+  margin:60px auto;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s;
+  position:relative;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.04);
+  border:1px solid #6366f1;
+  box-shadow:0 0 40px rgba(168,85,247,0.4);
+}
+
+/* ICON */
+.icon{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:15px;
+  background:linear-gradient(45deg,#6366f1,#a855f7);
+  box-shadow:0 0 25px rgba(168,85,247,0.6);
+}
+
+.icon i{
+  font-size:30px;
+  color:white;
+}
+
+/* TITLE */
+.card h3{
+  font-size:15px;
+  margin-top:10px;
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.btn{
+  padding:8px 14px;
+  border-radius:25px;
+  font-size:13px;
+  text-decoration:none;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  transition:0.3s;
+}
+
+.github{
+  background:#111827;
+}
+
+.linkedin{
+  background:#0A66C2;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 10px #a855f7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .projects{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>SENTHAMIL SELVAN</h2>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="blog.html">Blog</a>
+</div>
+</nav>
+
+<h1 class="title">My Projects</h1>
+
+<div class="projects">
+
+<!-- ===== PROJECT TEMPLATE ===== -->
+<!-- COPY THIS BLOCK FOR ALL 34 PROJECTS -->
+
+<div class="card">
+<div class="icon"><i class="fas fa-home"></i></div>
+<h3>House Price Prediction</h3>
+
+<div class="buttons">
+<a href="PASTE_GITHUB_LINK" target="_blank" class="btn github">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+<a href="PASTE_LINKEDIN_LINK" target="_blank" class="btn linkedin">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+</div>
+</div>
+
+<!-- ===== ADD ALL YOUR PROJECTS BELOW USING SAME FORMAT ===== -->
+
+</div>
+
+</body>
+</html>
