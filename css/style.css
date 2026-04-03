@@ -262,3 +262,205 @@ a {
   font-size: 14px;
 }
 
+
+
+/* ===== PROJECT COLORS ===== */
+
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #020617, #020617, #0f172a);
+        color: white;
+      }
+
+      /* NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 60px;
+      }
+
+      nav h2 {
+        font-size: 22px;
+      }
+
+      nav a {
+        color: #94a3b8;
+        margin-left: 20px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: #a855f7;
+      }
+
+      /* TITLE */
+      .title {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 42px;
+        background: linear-gradient(45deg, #6366f1, #a855f7);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      /* GRID */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        max-width: 1300px;
+        margin: 60px auto;
+        padding: 20px;
+      }
+
+      /* CARD */
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.4s;
+        position: relative;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.04);
+        border: 1px solid #6366f1;
+        box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+      }
+
+      /* ICON */
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 15px;
+        background: linear-gradient(45deg, #6366f1, #a855f7);
+        box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+      }
+
+      .icon i {
+        font-size: 30px;
+        color: white;
+      }
+
+      /* COVID PROJECT ICON COLOR */
+.covid-icon {
+  background: linear-gradient(135deg, #ff4d4d, #ff9966);
+  color: white;
+}
+
+/* OpenCV Project Icon */
+.opencv-icon {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+/* NLP Project Icon */
+.nlp-icon {
+  background: linear-gradient(135deg, #8e44ad, #c39bd3);
+  color: white;
+}
+
+/* Moving Object Detection Icon */
+.motion-icon {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: white;
+}
+
+/* Face Detection Icon */
+.face-icon {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: white;
+}
+
+/* Color Object Tracking Icon */
+.colortrack-icon {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+  color: white;
+}
+
+/* Face Recognition Icon */
+.facerec-icon {
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  color: white;
+}
+
+/* Emotion Recognition Icon */
+.emotion-icon {
+  background: linear-gradient(135deg, #fbd786, #f7797d);
+  color: white;
+}
+
+/* Neural Network Icon */
+.nn-icon {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  color: white;
+}
+
+/* Object Recognition Icon */
+.objrec-icon {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+}
+
+      /* TITLE */
+      .card h3 {
+        font-size: 15px;
+        margin-top: 10px;
+      }
+
+      /* BUTTONS */
+      .buttons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 8px 14px;
+        border-radius: 25px;
+        font-size: 13px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: 0.3s;
+      }
+
+      .github {
+        background: #111827;
+      }
+
+      .linkedin {
+        background: #0a66c2;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px #a855f7;
+      }
+
+      /* MOBILE */
+      @media (max-width: 768px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>

@@ -3,40 +3,176 @@
 <head>
 <title>Tools</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* ===== BACKGROUND ===== */
+#bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-2;
+}
+
+/* ===== CURSOR ===== */
+.cursor{
+  position:fixed;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,#22d3ee22,transparent);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:999;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  backdrop-filter:blur(10px);
+}
+
+nav h2{
+  background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+nav a{
+  color:#94a3b8;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#22d3ee;
+}
+
+/* ===== TITLE ===== */
+.title{
+  text-align:center;
+  margin-top:60px;
+  font-size:36px;
+}
+
+.title span{
+  background:linear-gradient(90deg,#8b5cf6,#22d3ee,#8b5cf6);
+  background-size:200%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:move 4s linear infinite;
+}
+
+/* SUBTEXT */
+.sub{
+  text-align:center;
+  color:#94a3b8;
+  margin-bottom:40px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  padding:40px;
+}
+
+/* ===== CARD ===== */
+.card{
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  text-align:center;
+  transition:0.3s;
+  transform-style:preserve-3d;
+}
+
+/* 3D HOVER */
+.card:hover{
+  transform:rotateX(10deg) rotateY(-10deg) scale(1.05);
+  box-shadow:0 20px 40px rgba(34,211,238,0.3);
+}
+
+/* ICON */
+.card i{
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.card h3{
+  margin-top:10px;
+}
+
+.card p{
+  color:#94a3b8;
+  font-size:14px;
+}
+
+/* REMOVE LINK STYLE */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ANIMATION */
+@keyframes move{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid{padding:20px;}
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h2>SENTHAMIL SELVAN</h2>
+<canvas id="bg"></canvas>
+<div class="cursor" id="cursor"></div>
 
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="tools.html">Tools</a>
-    <a href="blog.html">Blog</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </div>
+<nav>
+<h2>SENTHAMIL SELVAN</h2>
+
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="blog.html">Blog</a>
+<a href="projects.html">Projects</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+</div>
 </nav>
 
-<!-- TITLE -->
 <h1 class="title">Free Online <span>Tools</span></h1>
+<p class="sub">Every tool you need at your fingertips. 100% FREE.</p>
 
-<p style="text-align:center; color:#94a3b8;">
-Every tool you need at your fingertips. 100% FREE.
-</p>
-
-<!-- GRID -->
 <div class="grid">
 
-<!-- TOOL 1 -->
 <a href="https://www.ilovepdf.com/compress_pdf" target="_blank">
 <div class="card">
 <i class="fa-solid fa-image" style="font-size:30px;color:#22c55e;"></i>
@@ -45,7 +181,6 @@ Every tool you need at your fingertips. 100% FREE.
 </div>
 </a>
 
-<!-- TOOL 2 -->
 <a href="https://www.ilovepdf.com/jpg_to_pdf" target="_blank">
 <div class="card">
 <i class="fa-solid fa-repeat" style="font-size:30px;color:#f97316;"></i>
@@ -54,7 +189,6 @@ Every tool you need at your fingertips. 100% FREE.
 </div>
 </a>
 
-<!-- TOOL 3 -->
 <a href="https://www.ilovepdf.com/merge_pdf" target="_blank">
 <div class="card">
 <i class="fa-solid fa-layer-group" style="font-size:30px;color:#ef4444;"></i>
@@ -63,7 +197,6 @@ Every tool you need at your fingertips. 100% FREE.
 </div>
 </a>
 
-<!-- TOOL 4 -->
 <a href="https://www.ilovepdf.com/split_pdf" target="_blank">
 <div class="card">
 <i class="fa-solid fa-scissors" style="font-size:30px;color:#fb923c;"></i>
@@ -72,52 +205,6 @@ Every tool you need at your fingertips. 100% FREE.
 </div>
 </a>
 
-<!-- TOOL 5 -->
-<a href="https://www.ilovepdf.com/compress_pdf" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-zipper" style="font-size:30px;color:#22c55e;"></i>
-<h3>Compress PDF</h3>
-<p>Reduce PDF size</p>
-</div>
-</a>
-
-<!-- TOOL 6 -->
-<a href="https://www.ilovepdf.com/pdf_to_word" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-word" style="font-size:30px;color:#3b82f6;"></i>
-<h3>PDF to Word</h3>
-<p>Convert PDF to DOCX</p>
-</div>
-</a>
-
-<!-- TOOL 7 -->
-<a href="https://www.ilovepdf.com/pdf_to_powerpoint" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-powerpoint" style="font-size:30px;color:#f87171;"></i>
-<h3>PDF to PowerPoint</h3>
-<p>Convert PDF to PPT</p>
-</div>
-</a>
-
-<!-- TOOL 8 -->
-<a href="https://www.ilovepdf.com/word_to_pdf" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-pdf" style="font-size:30px;color:#60a5fa;"></i>
-<h3>Word to PDF</h3>
-<p>Convert DOCX to PDF</p>
-</div>
-</a>
-
-<!-- TOOL 9 -->
-<a href="https://www.ilovepdf.com/excel_to_pdf" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-excel" style="font-size:30px;color:#10b981;"></i>
-<h3>Excel to PDF</h3>
-<p>Convert Excel to PDF</p>
-</div>
-</a>
-
-<!-- AI TOOL 1 -->
 <a href="https://chat.openai.com" target="_blank">
 <div class="card">
 <i class="fa-solid fa-robot" style="font-size:30px;color:#22c55e;"></i>
@@ -126,43 +213,58 @@ Every tool you need at your fingertips. 100% FREE.
 </div>
 </a>
 
-<!-- AI TOOL 2 -->
-<a href="https://leonardo.ai" target="_blank">
-<div class="card">
-<i class="fa-solid fa-palette" style="font-size:30px;color:#a855f7;"></i>
-<h3>Leonardo AI</h3>
-<p>Create stunning AI images and designs</p>
-</div>
-</a>
-
-<!-- AI TOOL 3 -->
-<a href="https://www.notion.so/product/ai" target="_blank">
-<div class="card">
-<i class="fa-solid fa-brain" style="font-size:30px;color:#3b82f6;"></i>
-<h3>Notion AI</h3>
-<p>Smart note-taking with AI assistance</p>
-</div>
-</a>
-
-<!-- AI TOOL 4 -->
 <a href="https://runwayml.com" target="_blank">
 <div class="card">
 <i class="fa-solid fa-video" style="font-size:30px;color:#f97316;"></i>
 <h3>Runway ML</h3>
-<p>AI video editing and generation tool</p>
-</div>
-</a>
-
-<!-- AI TOOL 5 -->
-<a href="https://gamma.app" target="_blank">
-<div class="card">
-<i class="fa-solid fa-file-lines" style="font-size:30px;color:#ec4899;"></i>
-<h3>Gamma AI</h3>
-<p>Create presentations instantly using AI</p>
+<p>AI video editing tool</p>
 </div>
 </a>
 
 </div>
+
+<script>
+// CURSOR
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+// PARTICLES
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let p=[];
+for(let i=0;i<60;i++){
+p.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+dx:(Math.random()-0.5)*0.5,
+dy:(Math.random()-0.5)*0.5
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+p.forEach(a=>{
+a.x+=a.dx;
+a.y+=a.dy;
+
+ctx.beginPath();
+ctx.arc(a.x,a.y,2,0,Math.PI*2);
+ctx.fillStyle="#22d3ee";
+ctx.fill();
+});
+
+requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
