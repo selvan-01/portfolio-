@@ -1,44 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Machine Learning</title>
+<meta charset="UTF-8">
+<title>Machine Learning Blog</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
 body{
   background:#020617;
   color:white;
-  font-family:sans-serif;
-  padding:40px;
+  overflow-x:hidden;
 }
-h1{
-  color:#a855f7;
+
+/* CANVAS */
+#bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-2;
 }
-p{
-  color:#cbd5f5;
-  line-height:1.6;
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  backdrop-filter:blur(10px);
 }
-.btn{
-  padding:10px 20px;
-  background:#6366f1;
-  color:white;
+
+nav h2{
+  background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+nav a{
+  color:#94a3b8;
+  margin-left:20px;
   text-decoration:none;
-  border-radius:20px;
+}
+
+nav a:hover{
+  color:#22d3ee;
+}
+
+/* BLOG CONTENT */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+/* TITLE */
+.container h1{
+  font-size:40px;
+  margin-bottom:20px;
+  background:linear-gradient(90deg,#a855f7,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* SUBTITLE */
+.subtitle{
+  color:#94a3b8;
+  margin-bottom:40px;
+}
+
+/* SECTION */
+.section{
+  margin-bottom:40px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.section h2{
+  color:#22d3ee;
+  margin-bottom:10px;
+}
+
+.section p{
+  color:#cbd5f5;
+  line-height:1.7;
+  margin-bottom:10px;
+}
+
+.section ul{
+  margin-left:20px;
+  color:#94a3b8;
+}
+
+.section li{
+  margin-bottom:8px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Machine Learning Guide</h1>
+<canvas id="bg"></canvas>
 
-<p>Machine Learning is a part of AI that helps machines learn from data.</p>
+<!-- NAVBAR -->
+<nav>
+<h2>SENTHAMIL SELVAN</h2>
+<div>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="blog.html">Blog</a>
+<a href="projects.html">Projects</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-<p>Types:
-<br>• Supervised
-<br>• Unsupervised
-<br>• Reinforcement</p>
+<!-- BLOG -->
+<div class="container">
 
-<a href="assets/resume.pdf" download class="btn">Download Notes</a>
+<h1>Machine Learning Complete Guide</h1>
+<p class="subtitle">Learn AI, ML, and Data Science concepts in a simple and clear way 🚀</p>
+
+<div class="section">
+<h2>What is Machine Learning?</h2>
+<p>
+Machine Learning is a subset of Artificial Intelligence that allows systems to learn from data and improve performance without being explicitly programmed. Instead of writing rules manually, models learn patterns automatically.
+</p>
+</div>
+
+<div class="section">
+<h2>Types of Machine Learning</h2>
+<ul>
+<li><b>Supervised Learning:</b> Uses labeled data (e.g., spam detection, price prediction)</li>
+<li><b>Unsupervised Learning:</b> Finds hidden patterns (e.g., clustering, grouping)</li>
+<li><b>Reinforcement Learning:</b> Learns through rewards and punishments (e.g., games, robotics)</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Supervised Learning</h2>
+<p>
+In supervised learning, the model is trained using labeled data. It learns the relationship between input and output.
+</p>
+<p><b>Examples:</b> Regression, Classification</p>
+</div>
+
+<div class="section">
+<h2>Unsupervised Learning</h2>
+<p>
+Unsupervised learning works with unlabeled data. The model identifies patterns and structures in the dataset.
+</p>
+<p><b>Examples:</b> Clustering, Dimensionality Reduction</p>
+</div>
+
+<div class="section">
+<h2>Reinforcement Learning</h2>
+<p>
+Reinforcement learning involves an agent interacting with an environment and learning through rewards and penalties.
+</p>
+<p><b>Examples:</b> Self-driving cars, Game AI</p>
+</div>
+
+<div class="section">
+<h2>Deep Learning</h2>
+<p>
+Deep Learning is a subset of ML that uses neural networks with multiple layers to process complex data like images, audio, and text.
+</p>
+</div>
+
+<div class="section">
+<h2>Natural Language Processing (NLP)</h2>
+<p>
+NLP enables machines to understand and process human language. It is used in chatbots, translation, and sentiment analysis.
+</p>
+</div>
+
+<div class="section">
+<h2>Computer Vision</h2>
+<p>
+Computer Vision allows machines to interpret and understand visual information from images and videos.
+</p>
+</div>
+
+<div class="section">
+<h2>Model Evaluation</h2>
+<p>
+Model performance is measured using metrics like Accuracy, Precision, Recall, and F1 Score.
+</p>
+</div>
+
+</div>
+
+<script>
+// PARTICLES
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+}
+resize();
+window.addEventListener("resize",resize);
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.5,
+vy:(Math.random()-0.5)*0.5
+});
+}
+
+let mouse={x:0,y:0};
+window.addEventListener("mousemove",e=>{
+mouse.x=e.x;
+mouse.y=e.y;
+});
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+
+let dx=p.x-mouse.x;
+let dy=p.y-mouse.y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+p.x+=dx/20;
+p.y+=dy/20;
+}
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#22d3ee";
+ctx.fill();
+});
+
+requestAnimationFrame(draw);
+}
+draw();
+
+// SCROLL ANIMATION
+const sections=document.querySelectorAll(".section");
+
+function reveal(){
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+}
+
+window.addEventListener("scroll",reveal);
+reveal();
+</script>
 
 </body>
 </html>

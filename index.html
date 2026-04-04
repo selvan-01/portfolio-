@@ -16,10 +16,10 @@
 body{
   background:#020617;
   color:white;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
-/* ===== CANVAS ===== */
+/* CANVAS */
 #bg{
   position:fixed;
   width:100%;
@@ -27,7 +27,7 @@ body{
   z-index:-2;
 }
 
-/* ===== CURSOR ===== */
+/* CURSOR */
 .cursor{
   position:fixed;
   width:120px;
@@ -39,17 +39,7 @@ body{
   z-index:999;
 }
 
-.trail{
-  position:fixed;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#22d3ee;
-  pointer-events:none;
-  z-index:998;
-}
-
-/* ===== NAV ===== */
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
@@ -67,13 +57,14 @@ nav a{
   color:#94a3b8;
   margin-left:20px;
   text-decoration:none;
+  transition:0.3s;
 }
 
 nav a:hover{
   color:#22d3ee;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   text-align:center;
   margin-top:80px;
@@ -93,14 +84,13 @@ nav a:hover{
   font-size:42px;
 }
 
-/* GLOW TEXT */
+/* NAME */
 .name{
   background:linear-gradient(90deg,#8b5cf6,#22d3ee,#8b5cf6);
   background-size:200%;
   -webkit-background-clip:text;
   color:transparent;
   animation:move 4s linear infinite;
-  text-shadow:0 0 30px rgba(34,211,238,0.5);
 }
 
 @keyframes move{
@@ -108,16 +98,16 @@ nav a:hover{
   100%{background-position:200%;}
 }
 
-/* TYPING */
+/* ===== PERFECT TYPING FIX ===== */
 .typing{
   margin-top:12px;
   font-size:18px;
   color:#94a3b8;
   min-height:28px;
-  white-space:nowrap;
-  overflow:hidden;
-  width:340px;
-  margin:auto;
+  display:inline-block;
+  max-width:100%;
+  word-break:break-word;
+  text-align:center;
 }
 
 .typing::after{
@@ -135,6 +125,7 @@ nav a:hover{
   display:flex;
   justify-content:center;
   gap:20px;
+  flex-wrap:wrap;
 }
 
 .btn{
@@ -156,7 +147,6 @@ nav a:hover{
   color:#020617;
 }
 
-/* MAGNETIC HOVER */
 .btn:hover{
   transform:scale(1.1) translateY(-5px);
   box-shadow:0 20px 40px rgba(34,211,238,0.4);
@@ -168,16 +158,33 @@ nav a:hover{
 }
 
 .social a{
-  margin:0 10px;
+  margin:0 12px;
   color:#94a3b8;
-  font-size:20px;
+  font-size:22px;
+  transition:0.3s;
 }
 
 .social a:hover{
   color:#22d3ee;
-  transform:scale(1.3);
+  transform:scale(1.4);
 }
 
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .profile{
+    width:120px;
+  }
+}
 </style>
 </head>
 
@@ -218,32 +225,50 @@ nav a:hover{
 </a>
 </div>
 
+<!-- ✅ YOUR REAL SOCIAL LINKS -->
 <div class="social">
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-<a href="#"><i class="fab fa-linkedin"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/1FvsASs5eT/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+<a href="https://x.com/senthamil0045" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://www.linkedin.com/in/senthamil45" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/01_cracker_x?igsh=amM2NDI0ejloYmJr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
 </div>
 
 </section>
 
 <script>
-// TYPING
-const roles=["Machine Learning Engineer","Data Scientist","AI Developer"];
-let i=0,j=0,del=false;
+// ===== TYPING FIX (NO CUT) =====
+const roles=[
+"Machine Learning Engineer",
+"Data Scientist",
+"AI Developer"
+];
 
-function type(){
-let text=roles[i];
-document.getElementById("typing").innerHTML=text.substring(0,j);
+let i=0;
+let j=0;
+let isDeleting=false;
 
-if(!del) j++; else j--;
+function typeEffect(){
+const current=roles[i];
+document.getElementById("typing").textContent=current.substring(0,j);
 
-if(j===text.length){del=true;setTimeout(type,1500);return;}
-if(j===0){del=false;i=(i+1)%roles.length;}
-
-setTimeout(type,del?60:120);
+if(!isDeleting){
+j++;
+if(j>current.length){
+isDeleting=true;
+setTimeout(typeEffect,1500);
+return;
 }
-type();
+}else{
+j--;
+if(j===0){
+isDeleting=false;
+i=(i+1)%roles.length;
+}
+}
+
+setTimeout(typeEffect,isDeleting?40:80);
+}
+typeEffect();
 
 // CURSOR
 const cursor=document.getElementById("cursor");
@@ -252,12 +277,16 @@ cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
 });
 
-// PARTICLES (INTERACTIVE)
+// PARTICLES
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
 
+function resize(){
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+}
+resize();
+window.addEventListener("resize",resize);
 
 let particles=[];
 

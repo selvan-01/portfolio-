@@ -23,7 +23,7 @@ body{
   overflow-y:auto;
 }
 
-/* ===== BACKGROUND ===== */
+/* BACKGROUND */
 #bg{
   position:fixed;
   width:100%;
@@ -31,7 +31,7 @@ body{
   z-index:-2;
 }
 
-/* ===== CURSOR ===== */
+/* CURSOR */
 .cursor{
   position:fixed;
   width:120px;
@@ -43,7 +43,7 @@ body{
   z-index:999;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
   display:flex;
   justify-content:space-between;
@@ -67,7 +67,7 @@ nav a:hover{
   color:#22d3ee;
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 .container{
   min-height:100vh;
   display:flex;
@@ -76,7 +76,7 @@ nav a:hover{
   padding:60px 20px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
   width:420px;
   padding:30px;
@@ -87,7 +87,7 @@ nav a:hover{
   animation:fadeUp 1s ease;
 }
 
-/* ===== TITLE ===== */
+/* TITLE */
 .title{
   text-align:center;
   font-size:26px;
@@ -110,14 +110,14 @@ nav a:hover{
   margin-bottom:25px;
 }
 
-/* ===== SOCIAL GRID ===== */
+/* SOCIAL GRID */
 .social-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
 
-/* ===== SOCIAL BOX ===== */
+/* SOCIAL BOX */
 .social-grid a{
   display:flex;
   align-items:center;
@@ -141,6 +141,10 @@ nav a:hover{
   color:#020617;
   transform:translateY(-5px) scale(1.05);
   box-shadow:0 10px 25px rgba(34,211,238,0.5);
+}
+
+.social-grid a:hover i{
+  color:#020617;
 }
 
 /* ANIMATION */
@@ -190,7 +194,8 @@ nav a:hover{
 <i class="fas fa-globe"></i> Portfolio
 </a>
 
-<a href="mailto:senthamils445@gmail.com">
+<!-- ✅ FIXED EMAIL -->
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=senthamils445@gmail.com&su=Portfolio%20Contact&body=Hello%20Senthamil,%20I%20visited%20your%20portfolio" target="_blank">
 <i class="fas fa-envelope"></i> Email
 </a>
 
@@ -240,8 +245,12 @@ cursor.style.top=e.clientY+"px";
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
 
+function resize(){
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+}
+resize();
+window.addEventListener("resize",resize);
 
 let p=[];
 for(let i=0;i<60;i++){
